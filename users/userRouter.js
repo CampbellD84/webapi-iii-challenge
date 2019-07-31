@@ -17,7 +17,7 @@ router.post("/", validateUser, async (req, res) => {
 });
 
 router.post("/:id/posts", validatePost, async (req, res) => {
-  const postInfo = { ...req.body, post_id: req.params.id };
+  const postInfo = { ...req.body, user_id: req.params.id };
 
   try {
     const post = await Posts.insert(postInfo);
